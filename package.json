@@ -1,0 +1,18 @@
+{
+  "name": "upscalee",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Right-click any image in Windows Explorer and upscale it to 2K–16K with a radial quality picker.",
+  "packageManager": "pnpm@10.28.2",
+  "scripts": {
+    "dev": "pnpm --filter upscalee-desktop tauri dev",
+    "build": "pwsh -NoProfile -File scripts/build-release.ps1",
+    "fetch-engine": "pwsh -NoProfile -File scripts/fetch-engine.ps1",
+    "typecheck": "pnpm --filter upscalee-desktop typecheck",
+    "test": "pnpm --filter upscalee-desktop test && cargo test --workspace",
+    "test:web": "pnpm --filter upscalee-desktop test",
+    "test:rust": "cargo test --workspace",
+    "lint:rust": "cargo clippy --workspace --all-targets -- -D warnings",
+    "fmt:rust": "cargo fmt --all"
+  }
+}

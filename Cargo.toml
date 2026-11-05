@@ -1,0 +1,55 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/upscalee-ipc",
+    "crates/upscalee-core",
+    "apps/desktop/src-tauri",
+    "apps/shell-extension",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+authors = ["ChamathDilshanC"]
+repository = "https://github.com/ChamathDilshanC/Upscalee"
+publish = false
+
+[workspace.dependencies]
+upscalee-ipc = { path = "crates/upscalee-ipc" }
+upscalee-core = { path = "crates/upscalee-core" }
+
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "sync", "time", "process", "io-util", "net", "fs"] }
+tokio-util = "0.7"
+tracing = "0.1"
+tempfile = "3"
+uuid = { version = "1", features = ["v4", "serde"] }
+windows-sys = { version = "0.61", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_System_IO",
+    "Win32_System_JobObjects",
+    "Win32_System_Pipes",
+    "Win32_System_RemoteDesktop",
+    "Win32_System_SystemInformation",
+    "Win32_System_Threading",
+    "Win32_System_WindowsProgramming",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+# NOTE: keep panic = "unwind" (the default). The shell extension is loaded into
+# Explorer and relies on catch_unwind so that a bug never takes Explorer down.
+
+# Image decoding / resizing is unbearably slow without optimisation, so even
+# debug builds compile third-party crates with optimisations on.
+[profile.dev.package."*"]
+opt-level = 2

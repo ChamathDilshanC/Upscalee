@@ -1,0 +1,51 @@
+[package]
+name = "upscalee"
+description = "Upscalee – right-click AI image upscaler for Windows (tray app, radial picker, job queue)."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+default-run = "upscalee"
+
+[[bin]]
+name = "upscalee"
+path = "src/main.rs"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+upscalee-core.workspace = true
+upscalee-ipc.workspace = true
+
+tauri = { version = "2", features = ["tray-icon", "image-png"] }
+tauri-plugin-dialog = "2"
+tauri-plugin-opener = "2"
+
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+tracing.workspace = true
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }
+tracing-appender = "0.2"
+dirs = "6"
+winreg = "0.56"
+windows = { version = "0.62", features = [
+    "Foundation",
+    "Foundation_Collections",
+    "ApplicationModel",
+    "Management_Deployment",
+    "Win32_Foundation",
+    "Win32_Graphics_Gdi",
+    "Win32_System_Threading",
+    "Win32_UI_HiDpi",
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[dev-dependencies]
+tempfile.workspace = true

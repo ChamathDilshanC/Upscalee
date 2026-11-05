@@ -1,0 +1,14 @@
+{
+  "name": "realesrgan-ncnn-vulkan",
+  "release": "Real-ESRGAN v0.2.5.0 (realesrgan-ncnn-vulkan-20220424-windows)",
+  "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-windows.zip",
+  "sha256": "abc02804e17982a3be33675e4d471e91ea374e65b70167abc09e31acb412802d",
+  "files": [
+    "realesrgan-ncnn-vulkan.exe",
+    "vcomp140.dll",
+    "models/realesrgan-x4plus.param",
+    "models/realesrgan-x4plus.bin",
+    "models/realesrgan-x4plus-anime.param",
+    "models/realesrgan-x4plus-anime.bin"
+  ]
+}

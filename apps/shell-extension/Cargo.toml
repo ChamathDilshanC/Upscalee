@@ -1,0 +1,30 @@
+[package]
+name = "upscalee-shell"
+description = "UpscaleeShell.dll – IExplorerCommand handler that adds 'Upscale with Upscalee' to Explorer's context menu."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[lib]
+name = "upscalee_shell"
+# cdylib = the DLL Explorer loads; rlib = lets integration tests call the exports directly.
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+upscalee-ipc.workspace = true
+windows-core = "0.62"
+windows = { version = "0.62", features = [
+    "Win32_Foundation",
+    "Win32_System_Com",
+    "Win32_System_LibraryLoader",
+    "Win32_System_SystemServices",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_UI_Shell",
+    "Win32_UI_Shell_Common",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+[dev-dependencies]
+tempfile.workspace = true

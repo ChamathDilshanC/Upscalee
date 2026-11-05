@@ -1,0 +1,31 @@
+# Rust
+/target/
+
+# Node / front-end
+node_modules/
+apps/desktop/dist/
+
+# Tauri generated files
+apps/desktop/src-tauri/gen/schemas/
+
+# Upscale engine binaries + models are downloaded by scripts/fetch-engine.ps1
+engine/bin/
+engine/.download/
+
+# Signing material and packaged artifacts (never commit)
+*.pfx
+*.p12
+*.cer
+*.msix
+*.appx
+
+# Local environment / logs / editor
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+graphify-out/

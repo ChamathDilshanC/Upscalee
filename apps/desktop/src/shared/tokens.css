@@ -1,0 +1,114 @@
+/*
+ * Upscalee design tokens. Source of truth for colour, type, spacing, radius,
+ * elevation and motion. See docs/DESIGN_SYSTEM.md.
+ * Themes follow the Windows app theme via prefers-color-scheme.
+ */
+:root {
+  color-scheme: light dark;
+
+  /* Typography */
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Cascadia Mono", "Consolas", monospace;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-md: 14px;
+  --text-lg: 16px;
+  --text-xl: 20px;
+  --text-2xl: 28px;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Spacing (4 px grid) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* Brand */
+  --brand-violet: #5b3df5;
+  --brand-cyan: #1fb8f0;
+  --brand-gradient: linear-gradient(45deg, var(--brand-violet), var(--brand-cyan));
+
+  /* Light theme (semantic) */
+  --surface-0: #f6f6fa;
+  --surface-1: #ffffff;
+  --surface-2: #efeff5;
+  --surface-3: #e4e4ee;
+  --overlay: rgba(250, 250, 253, 0.96);
+  --overlay-ring: rgba(255, 255, 255, 0.98);
+  --border: rgba(20, 20, 40, 0.12);
+  --border-strong: rgba(20, 20, 40, 0.22);
+  --text-1: #15151f;
+  --text-2: #4a4a5e;
+  --text-3: #6b6b80;
+  --text-disabled: #a3a3b3;
+  --accent: #5b3df5;
+  --accent-hover: #4a2de0;
+  --accent-contrast: #ffffff;
+  --accent-soft: rgba(91, 61, 245, 0.12);
+  --accent-soft-strong: rgba(91, 61, 245, 0.2);
+  --success: #12804a;
+  --success-soft: rgba(18, 128, 74, 0.12);
+  --warning: #995500;
+  --warning-soft: rgba(153, 85, 0, 0.12);
+  --danger: #c22a46;
+  --danger-soft: rgba(194, 42, 70, 0.12);
+  --shadow-1: 0 1px 2px rgba(15, 15, 30, 0.08), 0 1px 1px rgba(15, 15, 30, 0.04);
+  --shadow-overlay: 0 10px 30px rgba(15, 15, 30, 0.22), 0 2px 6px rgba(15, 15, 30, 0.12);
+  --focus-ring: 0 0 0 2px var(--surface-1), 0 0 0 4px var(--accent);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-0: #0f0f15;
+    --surface-1: #17171f;
+    --surface-2: #20202b;
+    --surface-3: #2a2a37;
+    --overlay: rgba(23, 23, 31, 0.96);
+    --overlay-ring: rgba(32, 32, 43, 0.98);
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.2);
+    --text-1: #f2f2f7;
+    --text-2: #c0c0cf;
+    --text-3: #9494a8;
+    --text-disabled: #5e5e70;
+    --accent: #8a70ff;
+    --accent-hover: #9d87ff;
+    --accent-contrast: #0f0f15;
+    --accent-soft: rgba(138, 112, 255, 0.16);
+    --accent-soft-strong: rgba(138, 112, 255, 0.28);
+    --success: #3ccf8e;
+    --success-soft: rgba(60, 207, 142, 0.14);
+    --warning: #f2b44c;
+    --warning-soft: rgba(242, 180, 76, 0.14);
+    --danger: #ff6b81;
+    --danger-soft: rgba(255, 107, 129, 0.14);
+    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-overlay: 0 12px 34px rgba(0, 0, 0, 0.55), 0 2px 6px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+  }
+}

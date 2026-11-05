@@ -1,0 +1,43 @@
+[package]
+name = "upscalee-core"
+description = "Upscalee upscale pipeline: presets, planning, Real-ESRGAN engine runner, image I/O and output naming."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+publish.workspace = true
+
+[features]
+default = []
+# Builds the `upscalee-cli` developer binary (milestone M1 "Engine CLI").
+cli = ["dep:clap", "dep:tracing-subscriber"]
+
+[[bin]]
+name = "upscalee-cli"
+path = "src/bin/upscalee-cli.rs"
+required-features = ["cli"]
+
+[dependencies]
+upscalee-ipc.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tokio-util.workspace = true
+tracing.workspace = true
+tempfile.workspace = true
+uuid.workspace = true
+
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp", "bmp", "tiff", "rayon"] }
+fast_image_resize = { version = "6", features = ["image", "rayon"] }
+jpeg-encoder = { version = "0.7", features = ["simd"] }
+webp = { version = "0.3", default-features = false }
+
+clap = { version = "4", features = ["derive"], optional = true }
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"], optional = true }
+
+[target.'cfg(windows)'.dependencies]
+windows-sys.workspace = true
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["test-util"] }

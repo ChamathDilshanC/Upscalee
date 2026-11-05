@@ -1,0 +1,224 @@
+body {
+  background: var(--surface-0);
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.settings {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-8);
+}
+
+.loading {
+  color: var(--text-3);
+  padding: var(--space-4);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-4);
+  align-items: center;
+  margin-bottom: var(--space-6);
+}
+
+.hero-title {
+  margin: 0;
+  font: var(--weight-bold) var(--text-2xl) / 1.1 var(--font-display);
+  letter-spacing: -0.3px;
+}
+
+.hero-subtitle {
+  margin: var(--space-1) 0 0;
+  color: var(--text-2);
+}
+
+.save-state {
+  grid-column: 1 / -1;
+  min-height: 18px;
+  font-size: var(--text-sm);
+  color: var(--text-3);
+}
+
+.save-error {
+  color: var(--danger);
+}
+
+.section {
+  margin-top: var(--space-6);
+}
+
+.section-title {
+  margin: 0 0 var(--space-2);
+  font: var(--weight-semibold) var(--text-lg) var(--font-display);
+}
+
+.section-description {
+  margin: 0 0 var(--space-3);
+  color: var(--text-2);
+  font-size: var(--text-sm);
+}
+
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-1);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  min-height: 56px;
+}
+
+.row + .row,
+.row + .inline-error,
+.inline-error + .row {
+  border-top: 1px solid var(--border);
+}
+
+.row-text {
+  min-width: 0;
+}
+
+.row-label {
+  display: block;
+  font-weight: var(--weight-medium);
+}
+
+.row-hint {
+  color: var(--text-3);
+  font-size: var(--text-sm);
+  margin-top: 2px;
+  overflow-wrap: anywhere;
+}
+
+.row-control {
+  flex-shrink: 0;
+}
+
+.row-actions {
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.row-actions .inline-error {
+  margin-right: auto;
+  border: 0;
+  padding: 0;
+}
+
+.inline {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.inline-error {
+  margin: 0;
+  padding: var(--space-2) var(--space-4);
+  color: var(--danger);
+  font-size: var(--text-sm);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+.legal {
+  margin: 0;
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border);
+  color: var(--text-3);
+  font-size: var(--text-sm);
+  user-select: text;
+}
+
+/* Toggle switch */
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-2);
+  cursor: pointer;
+  padding: 0;
+  transition: background var(--duration-fast) var(--ease-out);
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-2);
+  transition:
+    transform var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.toggle.is-on {
+  background: var(--accent);
+  border-color: transparent;
+}
+
+.toggle.is-on .toggle-thumb {
+  transform: translateX(18px);
+  background: var(--accent-contrast);
+}
+
+/* Segmented control */
+.segmented {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.segment {
+  height: 26px;
+  padding: 0 var(--space-3);
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  font-size: var(--text-sm);
+  color: var(--text-2);
+  cursor: pointer;
+}
+
+.segment.is-selected {
+  background: var(--surface-1);
+  color: var(--text-1);
+  font-weight: var(--weight-semibold);
+  box-shadow: var(--shadow-1);
+}
+
+/* Native select */
+.select {
+  height: 30px;
+  min-width: 170px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-1);
+  color: var(--text-1);
+  font: inherit;
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 640px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

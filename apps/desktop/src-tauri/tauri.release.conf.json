@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "bundle": {
+    "resources": {
+      "../../../target/release/upscalee_shell.dll": "UpscaleeShell.dll",
+      "../../../engine/bin/realesrgan-ncnn-vulkan.exe": "engine/realesrgan-ncnn-vulkan.exe",
+      "../../../engine/bin/vcomp140.dll": "engine/vcomp140.dll",
+      "../../../engine/bin/models/realesrgan-x4plus.param": "engine/models/realesrgan-x4plus.param",
+      "../../../engine/bin/models/realesrgan-x4plus.bin": "engine/models/realesrgan-x4plus.bin",
+      "../../../engine/bin/models/realesrgan-x4plus-anime.param": "engine/models/realesrgan-x4plus-anime.param",
+      "../../../engine/bin/models/realesrgan-x4plus-anime.bin": "engine/models/realesrgan-x4plus-anime.bin",
+      "../../../THIRD_PARTY_NOTICES.md": "THIRD_PARTY_NOTICES.md"
+    }
+  }
+}

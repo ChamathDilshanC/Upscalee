@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Upscalee",
+  "mainBinaryName": "Upscalee",
+  "version": "0.1.0",
+  "identifier": "io.github.chamathdilshanc.upscalee",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "ChamathDilshanC",
+    "category": "GraphicsAndDesign",
+    "shortDescription": "Right-click AI image upscaler for Windows",
+    "longDescription": "Right-click any image in Windows Explorer, pick 2K, 4K, 8K, 12K or 16K on a radial menu, and Upscalee saves an AI-upscaled copy next to the original. Fully offline and GPU accelerated (Vulkan).",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.ico"
+    ],
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "installerIcon": "icons/icon.ico",
+        "installerHooks": "../../../installer/nsis-hooks.nsh",
+        "displayLanguageSelector": false
+      }
+    }
+  }
+}
