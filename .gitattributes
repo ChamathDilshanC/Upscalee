@@ -1,0 +1,4 @@
+# Store text with LF; binaries untouched.
+* text=auto eol=lf
+*.ico binary
+*.png binary
