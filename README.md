@@ -39,6 +39,14 @@ experience shown in the screenshots:
 After a selection is confirmed, the job is queued and the upscaled copy is
 saved beside the original without overwriting it.
 
+### Explorer Right-Click Action
+
+![Explorer Right-Click Action](docs/images/explorer-right-click-action.png)
+
+### Radial Upscale Picker
+
+![Radial Upscale Picker](docs/images/radial-upscale-picker.png)
+
 ## Quick start (development)
 
 Requirements: Windows 10 2004+/11 x64, Rust (MSVC) ≥ 1.85, VS 2022 Build Tools (C++ + Windows SDK), Node 20+, pnpm 10, PowerShell 7.
