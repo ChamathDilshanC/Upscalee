@@ -14,12 +14,30 @@ Fully offline · GPU accelerated (Vulkan, any vendor) · no window, no extra cli
 
 ## Features
 
-* **Explorer integration** — classic context menu (Windows 10, Windows 11 "Show more options") and the Windows 11 modern menu via a signed sparse package.
-* **Radial quality picker** at the cursor: 2K / 4K / 8K / 12K / 16K (longest edge), Photo/Anime model, Keep/PNG/JPG/WEBP — mouse or keyboard (`2 4 8 1 6`, arrows, Enter, Tab, F, Esc).
+* **Explorer Right-Click Action** — classic context menu (Windows 10, Windows 11 "Show more options") and the Windows 11 modern menu via a signed sparse package.
+* **Radial Upscale Picker** at the cursor: 2K / 4K / 8K / 12K / 16K (longest edge), Photo/Anime model, Keep/PNG/JPG/WEBP — mouse or keyboard (`2 4 8 1 6`, arrows, Enter, Tab, F, Esc).
 * **Real-ESRGAN** (ncnn Vulkan) with tiled inference, automatic smaller tiles on VRAM errors, and an exact Lanczos3 final resize.
 * **Multi-select** (`3 × PNG`), job queue with cancel, progress panel with **Open / Show in folder**, tray icon.
 * **Safe outputs** — `photo_4K.png`, `photo_4K (1).png`…; never overwrites; atomic writes; EXIF orientation, transparency and ICC profiles preserved.
 * **Graceful fallbacks** — no GPU → high-quality standard resize (clearly labelled), not enough RAM → "try 8K", unwritable folder → `Pictures\Upscalee`.
+
+## How the Explorer workflow works
+
+The two visible parts of the workflow have been named to match the user
+experience shown in the screenshots:
+
+1. **Explorer Right-Click Action** — select one or more supported images in
+   Windows File Explorer, right-click, and choose **Upscale with Upscalee**.
+   The action is available in the classic menu and, when the sparse package is
+   installed and signed, in the Windows 11 modern context menu.
+2. **Radial Upscale Picker** — Upscalee opens a compact menu around the cursor
+   instead of a separate full application window. Choose the target size from
+   the outer ring, then choose the model and output format from the inner ring.
+   Disabled sizes are marked when an image is already larger than the selected
+   target, and the same controls are available from the keyboard.
+
+After a selection is confirmed, the job is queued and the upscaled copy is
+saved beside the original without overwriting it.
 
 ## Quick start (development)
 
